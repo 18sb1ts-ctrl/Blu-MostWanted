@@ -186,7 +186,7 @@ export default function HomePage() {
             <div className="grid lg:grid-cols-12 gap-8 lg:gap-16 items-stretch">
               
               {/* Left Column: Visual Dossier */}
-              <div className="lg:col-span-5 relative group">
+              <div className="lg:col-span-6 relative group">
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={currentItem._id}
@@ -236,7 +236,7 @@ export default function HomePage() {
               </div>
 
               {/* Right Column: Data Readout */}
-              <div className="lg:col-span-7 flex flex-col justify-between py-8">
+              <div className="lg:col-span-6 flex flex-col justify-between py-8">
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={`data-${currentItem._id}`}
@@ -271,7 +271,7 @@ export default function HomePage() {
                         <span className="font-paragraph text-xs text-primary/60 uppercase tracking-widest block mb-2">
                           Subject Designation
                         </span>
-                        <h2 className="font-heading text-4xl md:text-6xl text-primary uppercase tracking-wide">
+                        <h2 className="font-heading text-2xl md:text-3xl text-primary uppercase tracking-wide">
                           {currentItem.personName || 'UNKNOWN_ENTITY'}
                         </h2>
                       </div>
@@ -285,20 +285,6 @@ export default function HomePage() {
                           <p className="font-paragraph text-base md:text-lg text-foreground/80 leading-relaxed">
                             {currentItem.description}
                           </p>
-                        </div>
-                      )}
-
-                      {currentItem.lastKnownLocation && (
-                        <div className="flex items-center gap-4 bg-primary/5 border border-primary/20 p-4">
-                          <MapPin className="w-5 h-5 text-primary" />
-                          <div>
-                            <span className="font-paragraph text-xs text-primary/60 uppercase tracking-widest block">
-                              Last Known Coordinates
-                            </span>
-                            <span className="font-paragraph text-sm md:text-base text-foreground uppercase tracking-wider">
-                              {currentItem.lastKnownLocation}
-                            </span>
-                          </div>
                         </div>
                       )}
                     </div>
