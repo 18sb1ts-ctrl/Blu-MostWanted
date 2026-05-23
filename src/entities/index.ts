@@ -18,7 +18,7 @@ export interface MostWantedList {
   /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
   personImage?: string;
   /** @wixFieldType LongText */
-  description1?: string;
+  description?: string;
   /** @wixFieldType text */
   lastKnownLocation?: string;
 }
