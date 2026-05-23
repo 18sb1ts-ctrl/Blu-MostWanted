@@ -282,7 +282,7 @@ export default function HomePage() {
                           Profile Overview
                         </span>
                         <p className="font-paragraph text-base md:text-lg text-foreground/80 leading-relaxed whitespace-pre-line">
-                          dangerouslySetInnerHTML={{__html: currentItem.description1 || ''}}
+                          {currentItem.description1 || ''}
                         </p>
                       </div>
                     </div>
