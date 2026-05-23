@@ -269,24 +269,22 @@ export default function HomePage() {
                     <div className="space-y-6">
                       <div>
                         <span className="font-paragraph text-xs text-primary/60 uppercase tracking-widest block mb-2">
-                          Subject Designation
+                          Racing Alias
                         </span>
                         <h2 className="font-heading text-2xl md:text-3xl text-primary uppercase tracking-wide">
                           {currentItem.personName || 'UNKNOWN_ENTITY'}
                         </h2>
                       </div>
                       
-                      {currentItem.description && (
-                        <div className="hud-clip-reverse bg-glassmorphism-overlay border border-primary/10 p-6 md:p-8 backdrop-blur-sm relative group">
-                          <div className="absolute top-0 left-0 w-2 h-full bg-primary/20 group-hover:bg-primary transition-colors duration-300" />
-                          <span className="font-paragraph text-xs text-primary/60 uppercase tracking-widest block mb-4">
-                            Profile Overview
-                          </span>
-                          <p className="font-paragraph text-base md:text-lg text-foreground/80 leading-relaxed">
-                            {currentItem.description}
-                          </p>
-                        </div>
-                      )}
+                      <div className="hud-clip-reverse bg-glassmorphism-overlay border border-primary/10 p-6 md:p-8 backdrop-blur-sm relative group">
+                        <div className="absolute top-0 left-0 w-2 h-full bg-primary/20 group-hover:bg-primary transition-colors duration-300" />
+                        <span className="font-paragraph text-xs text-primary/60 uppercase tracking-widest block mb-4">
+                          Profile Overview
+                        </span>
+                        <p className="font-paragraph text-base md:text-lg text-foreground/80 leading-relaxed">
+                          {currentItem.description || ''}
+                        </p>
+                      </div>
                     </div>
                   </motion.div>
                 </AnimatePresence>
