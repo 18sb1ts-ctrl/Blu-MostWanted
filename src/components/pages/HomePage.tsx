@@ -282,7 +282,7 @@ export default function HomePage() {
                           Profile Overview
                         </span>
                         <p className="font-paragraph text-base text-foreground/80 leading-relaxed whitespace-pre-line">
-                          {currentItem.description || ''}
+                          {(currentItem.description || '').replaceAll('|', '\n')}
                         </p>
                       </div>
                     </div>
