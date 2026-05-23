@@ -12,7 +12,7 @@ export default function Header() {
         <div className="flex items-center gap-3">
           <div className="w-2 h-2 bg-primary animate-pulse" />
           <h1 className="font-heading text-2xl md:text-3xl text-primary tracking-wider">
-            MOST WANTED
+            Blu-Blacklist.com
           </h1>
         </div>
         
