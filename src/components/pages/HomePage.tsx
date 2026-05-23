@@ -115,7 +115,7 @@ export default function HomePage() {
               initial={{ width: '0%' }}
               animate={{ width: '100%' }}
               transition={{ duration: 15, ease: 'linear' }}
-              className="absolute top-0 left-0 h-full bg-loading-bar shadow-[0_0_10px_#00FF00]"
+              className="absolute top-0 left-0 h-full bg-loading-bar shadow-[0_0_10px_#0066FF]"
             />
           </div>
           

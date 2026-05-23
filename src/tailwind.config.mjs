@@ -25,7 +25,7 @@ export default {
             colors: {
                 destructive: '#FF0000',
                 'destructive-foreground': '#FFFFFF',
-                'loading-bar': '#00FF00',
+                'loading-bar': '#0066FF',
                 'loading-bar-foreground': '#000000',
                 'glassmorphism-overlay': 'rgba(255, 255, 255, 0.05)',
                 background: '#0A0A0A',
