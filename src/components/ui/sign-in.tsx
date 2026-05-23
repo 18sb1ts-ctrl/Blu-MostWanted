@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardDescription1, CardHeader, CardTitle } from '@/components/ui/card';
 import { useMember } from '@/integrations';
 
 interface SignInProps {
@@ -26,7 +26,7 @@ export function SignIn({
       <Card className={cardClassName}>
         <CardHeader className="text-center space-y-4 py-10 px-10">
           <CardTitle className="">{title}</CardTitle>
-          <CardDescription className="">{message}</CardDescription>
+          <CardDescription1 className="">{message}</CardDescription1>
         </CardHeader>
         <CardContent className="text-center px-10 pb-10">
           <Button onClick={actions.login} className={buttonClassName}>
