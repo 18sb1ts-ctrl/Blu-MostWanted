@@ -93,17 +93,17 @@ const DialogTitle = React.forwardRef<
 ))
 DialogTitle.displayName = DialogPrimitive.Title.displayName
 
-const DialogDescription = React.forwardRef<
-  React.ElementRef<typeof DialogPrimitive.Description>,
-  React.ComponentPropsWithoutRef<typeof DialogPrimitive.Description>
+const DialogDescription1 = React.forwardRef<
+  React.ElementRef<typeof DialogPrimitive.Description1>,
+  React.ComponentPropsWithoutRef<typeof DialogPrimitive.Description1>
 >(({ className, ...props }, ref) => (
-  <DialogPrimitive.Description
+  <DialogPrimitive.Description1
     ref={ref}
     className={cn("text-sm text-foreground/70", className)}
     {...props}
   />
 ))
-DialogDescription.displayName = DialogPrimitive.Description.displayName
+DialogDescription1.displayName = DialogPrimitive.Description1.displayName
 
 export {
   Dialog,
@@ -115,5 +115,5 @@ export {
   DialogHeader,
   DialogFooter,
   DialogTitle,
-  DialogDescription,
+  DialogDescription1,
 }
