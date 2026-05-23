@@ -281,7 +281,7 @@ export default function HomePage() {
                         <span className="font-paragraph text-xs text-primary/60 uppercase tracking-widest block mb-4">
                           Profile Overview
                         </span>
-                        <p className="font-paragraph text-base md:text-lg text-foreground/80 leading-relaxed">
+                        <p className="font-paragraph text-base md:text-lg text-foreground/80 leading-relaxed whitespace-pre-line">
                           {currentItem.description1 || ''}
                         </p>
                       </div>
