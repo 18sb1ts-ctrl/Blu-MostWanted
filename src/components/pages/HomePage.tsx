@@ -39,23 +39,23 @@ export default function HomePage() {
     if (!showEncryption) return;
 
     let frame = 0;
-    const totalFrames = 150; // ~15 seconds at 100ms interval
+    const totalFrames = 100; // ~15 seconds at 100ms interval
     const interval = setInterval(() => {
       frame++;
-      
+
       if (frame >= totalFrames) {
         setEncryptedText(targetText);
-        setTimeout(() => setShowEncryption(false), 1500);
+        setTimeout(() => setShowEncryption(false), 1000);
         clearInterval(interval);
         return;
       }
 
       const progress = frame / totalFrames;
       let result = '';
-      
+
       for (let i = 0; i < targetText.length; i++) {
         const charProgress = Math.max(0, (progress - i / targetText.length) * targetText.length);
-        
+
         if (charProgress >= 1) {
           result += targetText[i];
         } else if (charProgress > 0) {
@@ -64,7 +64,7 @@ export default function HomePage() {
           result += chars[Math.floor(Math.random() * chars.length)];
         }
       }
-      
+
       setEncryptedText(result);
     }, 100);
 
@@ -100,7 +100,7 @@ export default function HomePage() {
         `}</style>
         <div className="absolute inset-0 scanline-bg pointer-events-none z-10" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,#0A0A0A_100%)] z-0" />
-        
+
         <div className="text-center z-20 relative w-full max-w-4xl px-4">
           <motion.div
             initial={{ opacity: 0 }}
@@ -109,7 +109,7 @@ export default function HomePage() {
           >
             {encryptedText}
           </motion.div>
-          
+
           <div className="mt-12 relative h-1 w-full max-w-2xl mx-auto bg-primary/20 overflow-hidden">
             <motion.div
               initial={{ width: '0%' }}
@@ -118,8 +118,8 @@ export default function HomePage() {
               className="absolute top-0 left-0 h-full bg-loading-bar shadow-[0_0_10px_#0066FF]"
             />
           </div>
-          
-          <motion.div 
+
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1 }}
@@ -151,7 +151,7 @@ export default function HomePage() {
           100% { background-position: 0 100vh; }
         }
         .tech-border {
-          background: 
+          background:
             linear-gradient(90deg, var(--tw-colors-primary) 50%, transparent 50%),
             linear-gradient(90deg, var(--tw-colors-primary) 50%, transparent 50%),
             linear-gradient(0deg, var(--tw-colors-primary) 50%, transparent 50%),
@@ -169,7 +169,7 @@ export default function HomePage() {
       </div>
 
       <Header />
-      
+
       <main className="flex-1 flex items-center justify-center px-4 py-12 md:py-24 relative z-10">
         <div className="w-full max-w-[100rem] mx-auto">
           {isLoading ? (
@@ -184,7 +184,7 @@ export default function HomePage() {
             </div>
           ) : (
             <div className="grid lg:grid-cols-12 gap-8 lg:gap-16 items-stretch">
-              
+
               {/* Left Column: Visual Dossier */}
               <div className="lg:col-span-6 relative group">
                 <AnimatePresence mode="wait">
@@ -197,7 +197,7 @@ export default function HomePage() {
                     className="relative h-full min-h-[60vh] lg:min-h-[80vh] hud-clip bg-primary/5 p-[1px]"
                   >
                     <div className="absolute inset-0 bg-background hud-clip" />
-                    
+
                     {/* Image Container */}
                     <div className="relative w-full h-full hud-clip overflow-hidden bg-background">
                       <Image
@@ -206,11 +206,11 @@ export default function HomePage() {
                         className="w-full h-full object-cover opacity-80 mix-blend-luminosity group-hover:mix-blend-normal transition-all duration-700"
                         width={1000}
                       />
-                      
+
                       {/* Tech Overlays */}
                       <div className="absolute inset-0 scanline-overlay pointer-events-none opacity-50" />
                       <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
-                      
+
                       {/* Targeting Reticle */}
                       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 border border-primary/30 rounded-full flex items-center justify-center pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                         <Crosshair className="w-8 h-8 text-primary/50" />
@@ -223,7 +223,7 @@ export default function HomePage() {
                       <div className="absolute top-4 right-4 w-8 h-8 border-t-2 border-r-2 border-primary/70" />
                       <div className="absolute bottom-4 left-4 w-8 h-8 border-b-2 border-l-2 border-primary/70" />
                       <div className="absolute bottom-4 right-4 w-8 h-8 border-b-2 border-r-2 border-primary/70" />
-                      
+
                       {/* Status Badge */}
                       <div className="absolute top-6 right-6 bg-destructive/20 border border-destructive/50 px-3 py-1 backdrop-blur-md">
                         <span className="font-paragraph text-xs text-destructive uppercase tracking-widest animate-pulse">
@@ -249,14 +249,14 @@ export default function HomePage() {
                     {/* Header / Rank */}
                     <div className="space-y-4 border-b border-primary/20 pb-8 relative">
                       <div className="absolute left-0 bottom-0 w-1/3 h-[1px] bg-primary shadow-[0_0_10px_#00FFFF]" />
-                      
+
                       <div className="flex items-center gap-4">
                         <div className="h-px flex-1 bg-primary/20" />
                         <span className="font-paragraph text-primary text-sm tracking-[0.3em] uppercase">
                           Threat Level
                         </span>
                       </div>
-                      
+
                       <div className="flex items-baseline gap-6">
                         <span className="font-paragraph text-2xl text-primary/50">#</span>
                         <h1 className="font-heading text-8xl md:text-[10rem] text-foreground leading-none tracking-tighter drop-shadow-[0_0_30px_rgba(255,255,255,0.1)]">
@@ -275,7 +275,7 @@ export default function HomePage() {
                           {currentItem.personName || 'UNKNOWN_ENTITY'}
                         </h2>
                       </div>
-                      
+
                       <div className="hud-clip-reverse bg-glassmorphism-overlay border border-primary/10 p-6 md:p-8 backdrop-blur-sm relative group">
                         <div className="absolute top-0 left-0 w-2 h-full bg-primary/20 group-hover:bg-primary transition-colors duration-300" />
                         <span className="font-paragraph text-xs text-primary/60 uppercase tracking-widest block mb-4">
@@ -291,7 +291,7 @@ export default function HomePage() {
 
                 {/* Navigation & System Status */}
                 <div className="mt-16 pt-8 border-t border-primary/20 flex flex-col md:flex-row items-center justify-between gap-8">
-                  
+
                   {/* Controls */}
                   <div className="flex gap-4 w-full md:w-auto">
                     <button
@@ -306,7 +306,7 @@ export default function HomePage() {
                         Ascend
                       </span>
                     </button>
-                    
+
                     <button
                       onClick={() => handleNavigate('down')}
                       disabled={currentIndex <= 0}
@@ -331,10 +331,10 @@ export default function HomePage() {
                         <div
                           key={idx}
                           className={`h-full flex-1 transition-all duration-500 ${
-                            idx === currentIndex 
-                              ? 'bg-primary shadow-[0_0_8px_#00FFFF]' 
-                              : idx < currentIndex 
-                                ? 'bg-primary/40' 
+                            idx === currentIndex
+                              ? 'bg-primary shadow-[0_0_8px_#00FFFF]'
+                              : idx < currentIndex
+                                ? 'bg-primary/40'
                                 : 'bg-transparent'
                           }`}
                         />
