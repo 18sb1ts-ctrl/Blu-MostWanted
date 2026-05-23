@@ -1,12 +1,12 @@
 // HPI 1.7-G
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronUp, ChevronDown, Crosshair, Activity, Database, MapPin } from 'lucide-react';
-import { BaseCrudService } from '@/integrations';
-import { MostWantedList } from '@/entities';
-import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import Header from '@/components/Header';
 import { Image } from '@/components/ui/image';
+import { MostWantedList } from '@/entities';
+import { BaseCrudService } from '@/integrations';
+import { AnimatePresence, motion } from 'framer-motion';
+import { Activity, ChevronDown, ChevronUp, Crosshair, Database } from 'lucide-react';
+import { useEffect, useState } from 'react';
 
 export default function HomePage() {
   const [showEncryption, setShowEncryption] = useState(true);
@@ -282,7 +282,7 @@ export default function HomePage() {
                           Profile Overview
                         </span>
                         <p className="font-paragraph text-base md:text-lg text-foreground/80 leading-relaxed">
-                          {currentItem.description || ''}
+                          {currentItem.description1 || ''}
                         </p>
                       </div>
                     </div>
