@@ -44,7 +44,7 @@ const AlertTitle = React.forwardRef<
 ))
 AlertTitle.displayName = "AlertTitle"
 
-const AlertDescription1 = React.forwardRef<
+const AlertDescription = React.forwardRef<
   HTMLParagraphElement,
   React.HTMLAttributes<HTMLParagraphElement>
 >(({ className, ...props }, ref) => (
@@ -54,6 +54,6 @@ const AlertDescription1 = React.forwardRef<
     {...props}
   />
 ))
-AlertDescription1.displayName = "AlertDescription1"
+AlertDescription.displayName = "AlertDescription"
 
-export { Alert, AlertTitle, AlertDescription1 }
+export { Alert, AlertTitle, AlertDescription }
