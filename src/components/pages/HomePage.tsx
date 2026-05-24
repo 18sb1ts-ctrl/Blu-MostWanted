@@ -303,9 +303,10 @@ export default function HomePage() {
                           <span className="font-paragraph text-xs text-primary/60 uppercase tracking-widest block mb-4">
                             Dossier Notes
                           </span>
-                          <div className="font-paragraph text-base text-foreground/80 leading-relaxed whitespace-pre-wrap break-words">
-                            {currentItem.description}
-                          </div>
+                          <div 
+                            className="font-paragraph text-base text-foreground/80 leading-relaxed prose prose-invert max-w-none"
+                            dangerouslySetInnerHTML={{ __html: currentItem.description }}
+                          />
                         </div>
                       )}
                     </div>
