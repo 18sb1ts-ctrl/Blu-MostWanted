@@ -296,6 +296,18 @@ export default function HomePage() {
                           </li>
                         </ul>
                       </div>
+
+                      {currentItem.description && (
+                        <div className="hud-clip-reverse bg-glassmorphism-overlay border border-primary/10 p-6 md:p-8 backdrop-blur-sm relative group">
+                          <div className="absolute top-0 left-0 w-2 h-full bg-primary/20 group-hover:bg-primary transition-colors duration-300" />
+                          <span className="font-paragraph text-xs text-primary/60 uppercase tracking-widest block mb-4">
+                            Dossier Notes
+                          </span>
+                          <div className="font-paragraph text-base text-foreground/80 leading-relaxed whitespace-pre-wrap break-words">
+                            {currentItem.description}
+                          </div>
+                        </div>
+                      )}
                     </div>
                   </motion.div>
                 </AnimatePresence>
