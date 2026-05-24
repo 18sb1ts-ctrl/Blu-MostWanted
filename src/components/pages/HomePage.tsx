@@ -281,9 +281,20 @@ export default function HomePage() {
                         <span className="font-paragraph text-xs text-primary/60 uppercase tracking-widest block mb-4">
                           Profile Overview
                         </span>
-                        <p className="font-paragraph text-base text-foreground/80 leading-relaxed whitespace-pre-line">
-                          {currentItem.description || ''}
-                        </p>
+                        <ul className="font-paragraph text-base text-foreground/80 leading-relaxed space-y-3">
+                          <li className="flex justify-between items-center">
+                            <span>Total Races</span>
+                            <span className="text-primary font-semibold">99</span>
+                          </li>
+                          <li className="flex justify-between items-center">
+                            <span>Podiums</span>
+                            <span className="text-primary font-semibold">43</span>
+                          </li>
+                          <li className="flex justify-between items-center">
+                            <span>Races Won</span>
+                            <span className="text-primary font-semibold">3</span>
+                          </li>
+                        </ul>
                       </div>
                     </div>
                   </motion.div>
